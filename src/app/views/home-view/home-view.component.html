@@ -1,3 +1,22 @@
 <div>
   <app-page-title title="Ngrx learning" subTitle="Angular, NgRX & Bootstrap."></app-page-title>
+
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">View</th>
+      <th scope="col">Attribute</th>
+      <th scope="col">Value</th>
+      <th scope="col">Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Basic counter</td>
+      <td>count</td>
+      <td>{{count$ | async}}</td>
+      <td><a routerLink="../basic-counter">Basic counter</a></td>
+    </tr>
+    </tbody>
+  </table>
 </div>

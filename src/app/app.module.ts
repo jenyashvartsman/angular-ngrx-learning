@@ -7,6 +7,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeViewComponent } from './views/home-view/home-view.component';
 import { BasicCounterViewComponent } from './views/basic-counter-view/basic-counter-view.component';
 import { PageTitleComponent } from './shared/page-title/page-title.component';
+import { counterReducer } from './views/basic-counter-view/counter.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { PageTitleComponent } from './shared/page-title/page-title.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
