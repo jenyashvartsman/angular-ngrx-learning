@@ -17,6 +17,13 @@
       <td>{{count$ | async}}</td>
       <td><a routerLink="../basic-counter">Basic counter</a></td>
     </tr>
+
+    <tr>
+      <td>Todo list</td>
+      <td>todos</td>
+      <td>{{todos$ | async | json}}</td>
+      <td><a routerLink="../todo-list">Todo list</a></td>
+    </tr>
     </tbody>
   </table>
 </div>

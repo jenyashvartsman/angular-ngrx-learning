@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { select, Store } from '@ngrx/store';
-import { Decrement, Increment, Reset } from './counter.actions';
+import { Store } from '@ngrx/store';
+import { Decrement, Increment, Reset } from '../../actions/counter.actions';
 
 @Component({
   selector: 'app-basic-counter-view',
@@ -13,7 +13,7 @@ export class BasicCounterViewComponent implements OnInit {
   count$: Observable<number>;
 
   constructor(private store: Store<{ count: number }>) {
-    this.count$ = store.pipe(select('count'));
+    this.count$ = store.select('count');
   }
 
   ngOnInit() {

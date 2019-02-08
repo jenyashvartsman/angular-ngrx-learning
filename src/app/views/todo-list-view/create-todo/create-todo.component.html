@@ -1,0 +1,8 @@
+<form [formGroup]="createTodoForm" (ngSubmit)="submitForm()">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="New todo" formControlName="todo">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">save</button>
+    </div>
+  </div>
+</form>

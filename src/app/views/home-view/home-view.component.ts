@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+import { Todo } from '../../models/todo.model';
+import { AppState } from '../../app.state';
 
 @Component({
   selector: 'app-home-view',
@@ -11,8 +13,11 @@ export class HomeViewComponent implements OnInit {
 
   count$: Observable<number>;
 
-  constructor(private store: Store<{ count: number }>) {
-    this.count$ = store.pipe(select('count'));
+  todos$: Observable<Todo[]>;
+
+  constructor(private store: Store<AppState>) {
+    this.count$ = store.select('count');
+    this.todos$ = store.select('todos');
   }
 
   ngOnInit() {
